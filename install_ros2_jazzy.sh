@@ -7,9 +7,9 @@ sudo apt install -y software-properties-common curl
 sudo add-apt-repository -y universe
 
 ROS_APT_SOURCE_VERSION=$(
-    curl -s https://github.com/ros-infrastructure/ros-apt-source/releases/latest \
-    | grep -oP '/tag/\K[^"]+' \
-    | head -n1
+    curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest \
+    | grep -F '"tag_name"' \
+    | awk -F'"' '{print $4}'
 )
 
 curl -L \
