@@ -22,7 +22,9 @@ sudo apt update
 
 sudo apt install -y \
     ros-jazzy-ros-base \
+    ros-dev-tools \
     build-essential \
+    git \
     python3-colcon-common-extensions \
     python3-rosdep
 
